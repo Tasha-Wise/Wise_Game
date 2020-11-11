@@ -11,8 +11,8 @@ let playerImg;
 let coinsImg;
 
 function preload(){
-  playerImg = loadImage('assets/avatar.PNG');
-  coinsImg = loadImage('assets/pearl.PNG');
+  playerImg = loadImage('assets/images/avatar.PNG');
+  coinsImg = loadImage('assets/images/pearl.PNG');
 }
 function setup(){
   cnv = createCanvas(w,h);
@@ -114,7 +114,7 @@ function level1(){
   //}
 
   //check for collision 
-  for(let i = coins.length - 1; i >= 0, i-- ){
+  for (let i = coins.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r +coins[i].r)/2){
    points++;
    console.log(points);
