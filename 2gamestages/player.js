@@ -16,6 +16,7 @@ class Player{
 	}
 
 	move(){
+		//console.log(I can move);
 		switch (this.direction){
 			case 'still':
 			//dont move anything
