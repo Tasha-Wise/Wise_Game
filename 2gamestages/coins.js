@@ -7,7 +7,7 @@ class Coins{
 	}
 	display(){
 		//ellipse(this.x, this.y, this.r, this.r)
-		image(coinsImg, sthis.x, this.y, this.r, this.r)
+		image(coinsImg, this.x, this.y, this.r, this.r)
 	}
 	move (){
 		this.y++; 
