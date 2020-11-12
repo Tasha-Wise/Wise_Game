@@ -127,12 +127,12 @@ function level1(){
 text(`points: ${points}`, w/4, h - 30);
 }
 function level1MouseClicked(){
-//  points++;
-//  console.log('points = ' + points);
-//
-//  if (points >= 10){
-//    state = 'YOU WIN!'
-//  }
+  points++;
+  //console.log('points = ' + points);
+
+  if (points >= 10){
+    state = 'YOU WIN!'
+  }
 }
 
 function youWin(){
