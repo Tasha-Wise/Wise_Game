@@ -86,7 +86,7 @@ function title(){
   text('Collect Pearls',w/2, h/5);
   textSize(40);
   text('click anywhere to start',w/2, h/2);
-  image(witchImg, w / 2, h - 120, 120, 120)
+  image(witchImg, w / 2, h - 300, 300, 300)
 }
 
 function titleMouseClicked(){

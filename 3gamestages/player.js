@@ -1,7 +1,7 @@
 
 class Player{
 	constructor(){
-		this.r = 120;
+		this.r = 300;
 		this.x = w / 2;
 		this.y = h - this.r;
 		this.speed = 2;
