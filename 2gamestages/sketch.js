@@ -80,7 +80,7 @@ function keyReleased(){
 
 function title(){
   background(0);
-  textSize(80);
+  textSize(70);
   fill(255);
   textAlign(CENTER);
   text('Collect Pearls',w/2, h/5);
