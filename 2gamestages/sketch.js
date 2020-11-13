@@ -79,7 +79,7 @@ function keyReleased(){
 }
 
 function title(){
-  background(0);
+  background(witchImg);
   textSize(70);
   fill(255);
   textAlign(CENTER);
