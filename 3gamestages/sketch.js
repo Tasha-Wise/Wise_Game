@@ -9,10 +9,16 @@ let player
 let coins =[];
 let playerImg;
 let coinsImg;
+let oceanImg;
+let spaceImg;
+let witchImg;
 
 function preload(){
   playerImg = loadImage('assets/images/mermaid.PNG');
   coinsImg = loadImage('assets/images/pearl.PNG');
+  oceanImg =loadImage('assets/images/ocean.PNG');
+  spaceImg =loadImage('assets/images/space.PNG');
+  witchImg =loadImage('assets/images/witch.PNG');
 }
 function setup(){
   cnv = createCanvas(w,h);
@@ -73,11 +79,11 @@ function keyReleased(){
 }
 
 function title(){
-  background(0);
-  textSize(80);
+  background(witchImg);
+  textSize(70);
   fill(255);
   textAlign(CENTER);
-  text('MY GAME',w/2, h/5);
+  text('Collect Pearls',w/2, h/5);
   textSize(40);
   text('click anywhere to start',w/2, h/2);
 }
@@ -90,7 +96,7 @@ function titleMouseClicked(){
 }
 
 function level1(){
-  background(50, 150, 200);
+  background(oceanImg);
   if (random(1) <= 0.01){
     coins.push(new Coins());
   }
@@ -133,16 +139,16 @@ function level1(){
 text(`points: ${points}`, w/4, h - 30);
 }
 function level1MouseClicked(){
-//  points++;
-//  console.log('points = ' + points);
-//
-//  if (points >= 10){
-//    state = 'YOU WIN!'
-//  }
+  points++;
+  console.log('points = ' + points);
+
+  if (points >= 10){
+    state = 'YOU WIN!'
+  }
 }
 
 function youWin(){
-  background(255, 50, 80);
+  background(spaceImg);
   textSize(80);
   stroke(255);
   text('YOU WIN!',w/2, h/2);
@@ -153,4 +159,6 @@ function youWin(){
 function youWinMouseClicked(){
 state = 'level 1';
 points = 0;
+witch.display();
+witchr.move();
 }
