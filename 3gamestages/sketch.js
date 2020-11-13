@@ -79,13 +79,14 @@ function keyReleased(){
 }
 
 function title(){
-  background(witchImg);
+  background(0);
   textSize(70);
   fill(255);
   textAlign(CENTER);
   text('Collect Pearls',w/2, h/5);
   textSize(40);
   text('click anywhere to start',w/2, h/2);
+  image(witchImg, w / 2, h - 90, 90, 90)
 }
 
 function titleMouseClicked(){
