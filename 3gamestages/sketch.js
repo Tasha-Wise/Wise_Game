@@ -3,8 +3,8 @@
 let state='title';
 let cnv;
 let points = 0; 
-let w = 600;
-let h = 600;
+let w = 900;
+let h = 900;
 let player
 let coins =[];
 let playerImg;
@@ -12,6 +12,7 @@ let coinsImg;
 let oceanImg;
 let spaceImg;
 let witchImg;
+let winnerImg;
 
 function preload(){
   playerImg = loadImage('assets/images/mermaid.PNG');
@@ -19,6 +20,7 @@ function preload(){
   oceanImg =loadImage('assets/images/ocean.PNG');
   spaceImg =loadImage('assets/images/space.PNG');
   witchImg =loadImage('assets/images/witch.PNG');
+  winnerImg =loadImage('assets/images/winner.PNG');
 }
 function setup(){
   cnv = createCanvas(w,h);
@@ -79,7 +81,7 @@ function keyReleased(){
 }
 
 function title(){
-  background(0);
+  background(spaceImg);
   textSize(70);
   fill(255);
   textAlign(CENTER);
@@ -149,7 +151,7 @@ function level1MouseClicked(){
 }
 
 function youWin(){
-  background(spaceImg);
+  background(winnerImg);
   textSize(80);
   stroke(255);
   text('YOU WIN!',w/2, h/2);
