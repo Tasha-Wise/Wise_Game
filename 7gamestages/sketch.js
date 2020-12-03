@@ -7,24 +7,27 @@ let w = 600;
 let h = 600;
 let player
 let coins =[];
+let enemies =[];
 let playerImg;
 let coinsImg;
 let oceanImg;
 let spaceImg;
 let witchImg;
 let winnerImg;
-let loserImg;
+let loseImg;
 let homescreenImg;
+let enemyImg;
 
 
 function preload(){
   playerImg = loadImage('assets/images/mermaid.PNG');
   coinsImg = loadImage('assets/images/pearl.PNG');
+  enemyImg = loadImage('assets/images/enemy.PNG');
   oceanImg =loadImage('assets/images/ocean.PNG');
   spaceImg =loadImage('assets/images/space.PNG');
   witchImg =loadImage('assets/images/witch.PNG');
   winnerImg =loadImage('assets/images/win.PNG');
-  loserImg =loadImage('assets/images/lose.PNG');
+  loseImg =loadImage('assets/images/lose.PNG');
   homescreenImg =loadImage('assets/images/homescreen.PNG');
 
 }
@@ -38,6 +41,7 @@ function setup(){
   player = new Player(); 
   //coins [0] = new Coins();
   coins.push(new Coins());
+  enemies.push(new Enemy());
 
 }
 
@@ -140,7 +144,7 @@ function instructions(){
   textAlign(CENTER);
   text('Collect Pearls',w/2, h/5);
   textSize(40);
-  text('Light Magic Pearls leads to one fate',w/2, h-50);
+  text('Light Magic Pearls leads to one fate',w/2, h/2);
   text('Dark Magic Pearls leads to another fate',w/2, h-80);
   text('click anywhere to start',w/2, h-100);
   image(witchImg, w / 2, h - 100, 100, 100)
@@ -155,11 +159,12 @@ function instructionsMouseClicked(){
 
 function level1(){
   background(oceanImg);
-  if (random(1) <= 0.01){
+  if (random(1) <= 0.04){
     coins.push(new Coins());
-
   }
-  
+  if (random(1) <= 0.08){
+    enemies.push(new Enemy());
+  }
   player.display();
   player.move();
 
@@ -170,6 +175,11 @@ function level1(){
    for (let i = 0; i < coins.length; i++){
    coins[i].display();
    coins[i].move();
+  }
+
+  for (let i = 0; i < enemies.length; i++){
+   enemies[i].display();
+   enemies[i].move();
   }
 
   //using forEach loop
@@ -192,7 +202,17 @@ function level1(){
    coins.splice(i, 1);
   }else if (coins[i].y > h){
     coins.splice(i, 1);
-    console.log('pearl is out of here')
+    console.log('Light pearl is out of here')
+  }
+}
+for (let i = enemies.length - 1; i >= 0; i--){
+  if (dist(player.x, player.y, enemies[i].x, enemies[i].y) <= (player.r +enemies[i].r)/2){
+   points--S;
+   console.log(points);
+   enemies.splice(i, 1);
+  }else if (enemies[i].y > h){
+    enemies.splice(i, 1);
+    console.log('dark pearl is out of here')
   }
 }
 text(`points: ${points}`, w/4, h - 30);
