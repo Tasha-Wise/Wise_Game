@@ -1,3 +1,4 @@
+
 class Enemies{
 	constructor(){
 		this.r = 90;
