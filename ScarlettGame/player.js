@@ -5,14 +5,15 @@ class Player{
 		this.r = 100;
 		this.x = w / 2;
 		this.y = h - this.r;
-		this.speed = 2;
+		this.speed = 3;
 		this.direction = 'still';
 
 	}
 
 	display(){
 		//rec(this.x, this.y, this.r, this.r)
-		image(playerImg, this.x, this.y, this.r, this.r)
+
+		image(playerAnimation[frameCount % playerAnimation.length], this.x, this.y, this.r, this.r)
 
 	}
 

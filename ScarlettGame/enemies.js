@@ -10,6 +10,6 @@ class Enemies{
 		image(enemyImg, this.x, this.y, this.r, this.r)
 	}
 	move (){
-		this.y++; 
+		this.y+= this.speed; 
 	}
 }

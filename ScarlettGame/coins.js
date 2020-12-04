@@ -11,6 +11,6 @@ class Coins{
 		image(coinsImg, this.x, this.y, this.r, this.r)
 	}
 	move (){
-		this.y++; 
+		this.y+= this.speed; 
 	}
 }

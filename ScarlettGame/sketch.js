@@ -19,7 +19,14 @@ let homescreenImg;
 let enemyImg;
 
 
+//spritesheets and animation
+let playerSS;
+let playerJSON
+let playerAnimation =[]; 
+
+
 function preload(){
+  //stillimages
   playerImg = loadImage('assets/images/mermaid.PNG');
   coinsImg = loadImage('assets/images/pearl.PNG');
   enemyImg = loadImage('assets/images/enemy.PNG');
@@ -29,6 +36,10 @@ function preload(){
   winnerImg =loadImage('assets/images/win.PNG');
   loseImg =loadImage('assets/images/lose.PNG');
   homescreenImg =loadImage('assets/images/homescreen.PNG');
+
+//spritesheets
+playerSS = loadImage('assets/sprites/spritesheet.PNG');
+playerJSON = loadJSON('assets/sprites/spritesheet.json');
 
 }
 function setup(){
@@ -42,6 +53,16 @@ function setup(){
   //coins [0] = new Coins();
   coins.push(new Coins());
   enemies.push(new Enemies());
+
+let playerFrames = playerJSON.frames;
+
+for (let i = 0; i< playerFrames.length; i++){
+  //console.log(playerFrames[i]);
+  let pos = playerFrames[i].frame;
+  let img = playerSS.get(pos.x, pos.y, pos.w, pos.h);
+  playerAnimation.push(img);
+  //console.log(playerAnimation);
+  }
 
 }
 
@@ -157,10 +178,10 @@ function instructionsMouseClicked(){
 
 function level1(){
   background(oceanImg);
-  if (random(1) <= 0.04){
+  if (random(1) <= 0.08){
     coins.push(new Coins());
   }
-  if (random(1) <= 0.06){
+  if (random(1) <= 0.1){
     enemies.push(new Enemy());
   }
   player.display();
