@@ -1,6 +1,7 @@
 {
-	"frames": {
-		"mermaid 1.PNG": {
+	"frames": [
+		{
+			"filename": "mermaid 1.PNG",
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +21,8 @@
 				"h": 800
 			}
 		},
-		"mermaid 2.PNG": {
+		{
+			"filename": "mermaid 2.PNG",
 			"frame": {
 				"x": 803,
 				"y": 1,
@@ -40,7 +42,8 @@
 				"h": 800
 			}
 		},
-		"mermaid 3.PNG": {
+		{
+			"filename": "mermaid 3.PNG",
 			"frame": {
 				"x": 1,
 				"y": 803,
@@ -60,7 +63,8 @@
 				"h": 800
 			}
 		},
-		"mermaid 4.PNG": {
+		{
+			"filename": "mermaid 4.PNG",
 			"frame": {
 				"x": 803,
 				"y": 803,
@@ -80,7 +84,8 @@
 				"h": 800
 			}
 		},
-		"mermaid 5.PNG": {
+		{
+			"filename": "mermaid 5.PNG",
 			"frame": {
 				"x": 1605,
 				"y": 1,
@@ -100,7 +105,8 @@
 				"h": 800
 			}
 		},
-		"mermaid 6.PNG": {
+		{
+			"filename": "mermaid 6.PNG",
 			"frame": {
 				"x": 1605,
 				"y": 803,
@@ -120,7 +126,8 @@
 				"h": 800
 			}
 		},
-		"mermaid 7.PNG": {
+		{
+			"filename": "mermaid 7.PNG",
 			"frame": {
 				"x": 1,
 				"y": 1605,
@@ -140,7 +147,8 @@
 				"h": 800
 			}
 		},
-		"mermaid 8.PNG": {
+		{
+			"filename": "mermaid 8.PNG",
 			"frame": {
 				"x": 803,
 				"y": 1605,
@@ -160,7 +168,7 @@
 				"h": 800
 			}
 		}
-	},
+	],
 	"meta": {
 		"app": "http://www.codeandweb.com/texturepacker",
 		"version": "1.0",
