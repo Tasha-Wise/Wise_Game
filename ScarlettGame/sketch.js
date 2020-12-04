@@ -5,9 +5,13 @@ let cnv;
 let points = 0; 
 let w = 600;
 let h = 600;
+
+//movable assets
 let player
 let coins =[];
 let enemies =[];
+
+//images
 let playerImg;
 let coinsImg;
 let oceanImg;
