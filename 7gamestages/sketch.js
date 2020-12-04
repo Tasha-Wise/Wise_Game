@@ -7,7 +7,7 @@ let w = 600;
 let h = 600;
 let player
 let coins =[];
-let enemies =[];
+let enemy =[];
 let playerImg;
 let coinsImg;
 let oceanImg;
