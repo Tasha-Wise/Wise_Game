@@ -7,7 +7,7 @@ let w = 600;
 let h = 600;
 let player
 let coins =[];
-let enemy =[];
+let enemies =[];
 let playerImg;
 let coinsImg;
 let oceanImg;
@@ -41,7 +41,7 @@ function setup(){
   player = new Player(); 
   //coins [0] = new Coins();
   coins.push(new Coins());
-  enemies.push(new Enemy());
+  enemies.push(new Enemies());
 
 }
 
