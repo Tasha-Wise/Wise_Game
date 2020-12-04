@@ -38,8 +38,8 @@ function preload(){
   homescreenImg =loadImage('assets/images/homescreen.PNG');
 
 //spritesheets
-playerSS = loadImage('assets/sprites/spritesheet.PNG');
-playerJSON = loadJSON('assets/sprites/spritesheet.json');
+playerSS = loadImage('assets/sprites/mermaidspritesheet.PNG');
+playerJSON = loadJSON('assets/sprites/mermaidspritesheet.json');
 
 }
 function setup(){
