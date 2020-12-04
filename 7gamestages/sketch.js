@@ -160,7 +160,7 @@ function level1(){
   if (random(1) <= 0.04){
     coins.push(new Coins());
   }
-  if (random(1) <= 0.08){
+  if (random(1) <= 0.06){
     enemies.push(new Enemy());
   }
   player.display();
@@ -210,12 +210,14 @@ for (let i = enemies.length - 1; i >= 0; i--){
    enemies.splice(i, 1);
   }else if (enemies[i].y > h){
     enemies.splice(i, 1);
-    console.log('dark pearl is out of here')
+    console.log('Dark pearl is out of here')
   }
 }
 text(`points: ${points}`, w/4, h - 30);
- if (points >= 10){
-    state = 'YOU WIN!'
+ if (points >= 5){
+    state = 'you win'
+  } else if (points <= -5){
+    state ='you lose';
   }
 }
 function level1MouseClicked(){
@@ -237,23 +239,23 @@ function youWin(){
 }
 
 function youWinMouseClicked(){
-state = 'level 1';
+state = 'title';
 points = 0;
 witch.display();
 witchr.move();
 }
 
 function youLose(){
-  background(loserImg);
+  background(loseImg);
   textSize(80);
   stroke(255);
-  text('YOU WIN!',w/2, h/2);
+  text('GAME OVER!',w/2, h/2);
   textSize(40);
   text('click anywhere to restart',w/2, h*3/4);
 }
 
 function youLoseMouseClicked(){
-state = 'level 1';
+state = 'title';
 points = 0;
 witch.display();
 witchr.move();
