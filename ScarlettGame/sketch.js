@@ -56,6 +56,7 @@ function setup(){
   player = new Player(); 
   //coins [0] = new Coins();
   coins.push(new Coins());
+
   enemies.push(new Enemies());
 
 let playerFrames = playerJSON.frames;
@@ -186,7 +187,7 @@ function level1(){
     coins.push(new Coins());
   }
   if (random(1) <= 0.1){
-    enemies.push(new Enemy());
+    enemies.push(new Enemies());
   }
   player.display();
   player.move();
