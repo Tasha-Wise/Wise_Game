@@ -3,8 +3,8 @@
 let state='title';
 let cnv;
 let points = 0; 
-let w = 900;
-let h = 900;
+let w = 600;
+let h = 600;
 
 //movable assets
 let player = 1;
