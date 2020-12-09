@@ -144,7 +144,7 @@ if (keyIsDown(DOWN_ARROW)){
 
 
 function title(){
-  background(homescreenImg, w, h);
+  background(homescreenImg, 0, 0);
   textSize(70);
   fill(255);
   textAlign(CENTER);
@@ -184,7 +184,7 @@ function instructionsMouseClicked(){
 }
 
 function level1(){
-  background(oceanImg);
+  background(oceanImg, 0, 0);
   if (random(1) <= 0.08){
     coins.push(new Coins());
   }
