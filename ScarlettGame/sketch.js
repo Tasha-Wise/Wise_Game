@@ -144,7 +144,7 @@ if (keyIsDown(DOWN_ARROW)){
 
 
 function title(){
-  background(homescreenImg);
+  background(homescreenImg, w, h);
   textSize(70);
   fill(255);
   textAlign(CENTER);
@@ -162,7 +162,7 @@ function titleMouseClicked(){
 }
 
 function instructions(){
-  background(spaceImg);
+  background(spaceImg, 0, 0);
   textSize(70);
   fill(255);
   textAlign(CENTER);
@@ -258,7 +258,7 @@ function level1MouseClicked(){
 }
 
 function youWin(){
-  background(winImg);
+  background(winImg, 0, 0);
   textSize(80);
   stroke(255);
   text('YOU WIN!',w/2, h/2);
@@ -274,7 +274,7 @@ player.move();
 }
 
 function youLose(){
-  background(loseImg);
+  background(loseImg, 0, 0);
   textSize(80);
   stroke(255);
   text('GAME OVER!',w/2, h/2);
