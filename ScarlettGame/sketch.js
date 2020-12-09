@@ -3,11 +3,11 @@
 let state='title';
 let cnv;
 let points = 0;
-let w = 800;
-let h = 800;
+let w = 1600;
+let h = 1600;
 
 //movable assets
-let player
+let player = 1;
 let coins =[];
 let enemies =[];
 
@@ -242,9 +242,9 @@ for (let i = enemies.length - 1; i >= 0; i--){
   }
 }
 text(`points: ${points}`, w/4, h - 30);
- if (points >= 5){
+ if (points >= 2){
     state = 'you win'
-  } else if (points <= -5){
+  } else if (points <= -1){
     state ='you lose';
   }
 }
@@ -268,7 +268,7 @@ function youWin(){
 
 function youWinMouseClicked(){
 state = 'title';
-points = 10;
+points = 0;
 player.display();
 player.move();
 }
@@ -284,7 +284,7 @@ function youLose(){
 
 function youLoseMouseClicked(){
 state = 'title';
-points = -10;
+points = 0;
 player.display();
 player.move();
 }
