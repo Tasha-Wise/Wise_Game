@@ -43,7 +43,7 @@ function setup(){
   
   //coins [0] = new Coins();
   coins.push(new Coins());
-
+  enemies.push(new Enemies());  
 }
 
 function draw(){
@@ -62,6 +62,10 @@ function draw(){
     case 'YOU WIN!':
     youWin();
     cnv.mouseClicked(youWinMouseClicked)
+    break;
+    case 'YOU LOSE!':
+    youLose();
+    cnv.mouseClicked(youLoseMouseClicked)
     break;
     default:
     break;
@@ -198,6 +202,20 @@ function youWin(){
 function youWinMouseClicked(){
 state = 'level 1';
 points = 0;
-witch.display();
-witchr.move();
+}
+
+function youLose(){
+  background(loseImg);
+  textSize(80);
+  stroke(255);
+  text('GAME OVER!',w/2, h/2);
+  textSize(40);
+  text('click anywhere to restart',w/2, h*3/4);
+}
+
+function youLoseMouseClicked(){
+state = 'title';
+points = 0;
+player.display();
+player.move();
 }
