@@ -67,8 +67,8 @@ function draw(){
     youLose();
     cnv.mouseClicked(youLoseMouseClicked)
     break;
-    default:
-    break;
+    //default:
+    //break;
   }
 
   //if (state === 'title'){
@@ -222,8 +222,10 @@ function youWin(){
 }
 
 function youWinMouseClicked(){
-state = 'level 1';
+state = 'title';
 points = 0;
+player.display();
+player.move();
 }
 
 function youLose(){
