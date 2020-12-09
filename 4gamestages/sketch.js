@@ -7,6 +7,7 @@ let w = 600;
 let h = 600;
 
 //movable assets
+let witch = 1;
 let player = 1;
 let coins =[];
 let enemies =[];
