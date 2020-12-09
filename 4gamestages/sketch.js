@@ -104,6 +104,8 @@ function title(){
   textSize(40);
   text('click anywhere to start',w/2, h/2);
   //image(witchImg, w / 2, h - 100, 100, 100)
+  witch.display();
+  witch.move();
 }
 
 function titleMouseClicked(){
@@ -114,7 +116,7 @@ function titleMouseClicked(){
 }
 
 function instructions(){
-  background(spaceImg, 0, 0);
+  background(spaceImg,);
   textSize(70);
   fill(255);
   textAlign(CENTER);
