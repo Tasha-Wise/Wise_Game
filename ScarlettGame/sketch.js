@@ -50,7 +50,7 @@ function setup(){
   cnv = createCanvas(w,h);
   frameRate(12);
   imageMode(CENTER);
-  rectMode(CENTER);
+  //rectMode(CENTER);
   textFont('monospace');
 
   player = new Witch();
