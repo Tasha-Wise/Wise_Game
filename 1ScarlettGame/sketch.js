@@ -2,7 +2,7 @@
 
 let state='title';
 let cnv;
-let points = 0;
+let points = 0; 
 let w = 600;
 let h = 600;
 
@@ -26,7 +26,7 @@ let enemyImg;
 //spritesheets and animation
 let playerSS;
 let playerJSON
-let playerAnimation =[];
+let playerAnimation =[]; 
 
 
 function preload(){
@@ -53,7 +53,7 @@ function setup(){
   rectMode(CENTER);
   textFont('monospace');
 
-  player = new Witch();
+  player = new Player(); 
   //coins [0] = new Coins();
   coins.push(new Coins());
 
@@ -118,7 +118,7 @@ function keyPressed(){
   }
 }
 function keyReleased(){
-
+ 
  let numberKeysPressed = 0;
 if (keyIsDown(LEFT_ARROW)){
   numberKeysPressed++;
@@ -140,7 +140,7 @@ if (keyIsDown(DOWN_ARROW)){
   player.direction = 'still'
     }
   }
-
+    
 
 
 function title(){
@@ -151,14 +151,14 @@ function title(){
   text('Scarletts fate',w/2, h/5);
   textSize(40);
   text('click anywhere to see instructions',w/2, h/2);
-
+  
 }
 
 function titleMouseClicked(){
 
     console.log('canvas is clicked on title page');
     state = 'instructions'
-
+  
 }
 
 function instructions(){
@@ -171,16 +171,14 @@ function instructions(){
   text('Light Magic Pearls leads to one fate',w/2, h/2);
   text('Dark Magic Pearls leads to another fate',w/2, h-80);
   text('click anywhere to start',w/2, h-100);
-  //image(witchImg, w / 2, h - 100, 100, 100);
-witch.display();
-witch.move();
+  image(witchImg, w / 2, h - 100, 100, 100)
 }
 
 function instructionsMouseClicked(){
 
     console.log('canvas is clicked on instructions page');
     state = 'level1'
-
+  
 }
 
 function level1(){
@@ -194,7 +192,7 @@ function level1(){
   player.display();
   player.move();
 
-
+ 
 //iterating through coins array to display an move them
 
 ///using for loop
@@ -220,7 +218,7 @@ function level1(){
   //  coins.move();
   //}
 
-  //check for collision
+  //check for collision 
   for (let i = coins.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r +coins[i].r)/2){
    points++;
@@ -269,8 +267,8 @@ function youWin(){
 function youWinMouseClicked(){
 state = 'title';
 points = 0;
-player.display();
-player.move();
+witch.display();
+witchr.move();
 }
 
 function youLose(){
@@ -285,6 +283,6 @@ function youLose(){
 function youLoseMouseClicked(){
 state = 'title';
 points = 0;
-player.display();
-player.move();
+witch.display();
+witchr.move();
 }
