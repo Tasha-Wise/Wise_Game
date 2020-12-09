@@ -143,7 +143,9 @@ function level1(){
   if (random(1) <= 0.01){
     coins.push(new Coins());
   }
-  
+  if (random(1) <= 0.1){
+    enemies.push(new Enemies());
+  }
   player.display();
   player.move();
 
@@ -156,6 +158,11 @@ function level1(){
    coins[i].move();
   }
 
+
+    for (let i = 0; i < enemies.length; i++){
+   enemies[i].display();
+   enemies[i].move();
+  }
   //using forEach loop
   //coins.forEach(function(coins){
   //  coins.display();
@@ -179,14 +186,29 @@ function level1(){
     console.log('pearl is out of here')
   }
 }
+
+for (let i = enemies.length - 1; i >= 0; i--){
+  if (dist(player.x, player.y, enemies[i].x, enemies[i].y) <= (player.r +enemies[i].r)/2){
+   points--;
+   console.log(points);
+   enemies.splice(i, 1);
+  }else if (enemies[i].y > h){
+    enemies.splice(i, 1);
+    console.log('Dark pearl is out of here')
+  }
+}
+
 text(`points: ${points}`, w/4, h - 30);
 }
 function level1MouseClicked(){
   points++;
   console.log('points = ' + points);
 
-  if (points >= 10){
-    state = 'YOU WIN!'
+  text(`points: ${points}`, w/4, h - 30);
+ if (points >= 2){
+    state = 'you win'
+  } else if (points <= -1){
+    state ='you lose';
   }
 }
 
