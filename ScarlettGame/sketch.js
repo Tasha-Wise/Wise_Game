@@ -267,7 +267,7 @@ function youWin(){
 }
 
 function youWinMouseClicked(){
-state = 'YOU WIN!';
+state = 'title';
 points = 10;
 player.display();
 player.move();
@@ -283,7 +283,7 @@ function youLose(){
 }
 
 function youLoseMouseClicked(){
-state = 'YOU LOSE!';
+state = 'title';
 points = -10;
 player.display();
 player.move();
