@@ -7,8 +7,7 @@ let w = 600;
 let h = 600;
 
 //movable assets
-let witch = 1;
-let player = 1;
+let player;
 let coins =[];
 let enemies =[];
 
@@ -41,6 +40,7 @@ function setup(){
   textFont('monospace');
 
   player = new Player(); 
+  
   //coins [0] = new Coins();
   coins.push(new Coins());
 
@@ -92,8 +92,7 @@ function keyPressed(){
 function keyReleased(){
   if(player == '') {
         player.direction = 'still'
-    }
-    return false;
+    } 
 }
 
 function title(){
@@ -105,8 +104,6 @@ function title(){
   textSize(40);
   text('click anywhere to start',w/2, h/2);
   //image(witchImg, w / 2, h - 100, 100, 100)
-  witch.display();
-  witch.move();
 }
 
 function titleMouseClicked(){
@@ -126,9 +123,8 @@ function instructions(){
   text('Light Magic Pearls leads to one fate',w/2, h/2);
   text('Dark Magic Pearls leads to another fate',w/2, h-80);
   text('click anywhere to start',w/2, h-100);
-  //image(witchImg, w / 2, h - 100, 100, 100);
-witch.display();
-witch.move();
+  image(witchImg, w / 2, h - 100, 100, 100);
+
 }
 
 function instructionsMouseClicked(){
