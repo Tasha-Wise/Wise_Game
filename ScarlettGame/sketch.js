@@ -78,7 +78,7 @@ function draw(){
     cnv.mouseClicked(instructionsMouseClicked);
     break;
     case 'level 1':
-    level 1();
+    level1();
     cnv.mouseClicked(level1MouseClicked);
     break;
     case 'YOU WIN!':
@@ -154,13 +154,13 @@ function instructions(){
 }
 
 function instructionsMouseClicked(){
-    state = 'level1'
+    state = 'level 1'
     console.log('canvas is clicked on instructions page');
     
 
 }
 
-function level 1(){
+function level1(){
   background(oceanImg);
   if (random(1) <= 0.01){
     coins.push(new Coins());
