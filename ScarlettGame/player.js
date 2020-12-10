@@ -1,5 +1,3 @@
-
-
 class Player{
 	constructor(){
 		this.r = 100;

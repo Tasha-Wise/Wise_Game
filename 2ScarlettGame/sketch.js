@@ -2,12 +2,12 @@
 
 let state='title';
 let cnv;
-let points = 0; 
-let w = 600;
-let h = 600;
+let points = 0;
+let w = 800;
+let h = 800;
 
 //movable assets
-let player;
+let player = 1;
 let coins =[];
 let enemies =[];
 
@@ -22,8 +22,15 @@ let loseImg;
 let homescreenImg;
 let enemyImg;
 
+
+//spritesheets and animation
+let playerSS;
+let playerJSON
+let playerAnimation =[];
+
+
 function preload(){
-   //stillimages
+  //stillimages
   playerImg = loadImage('assets/images/mermaid.PNG');
   coinsImg = loadImage('assets/images/pearl.PNG');
   enemyImg = loadImage('assets/images/enemy.PNG');
@@ -33,17 +40,35 @@ function preload(){
   winnerImg =loadImage('assets/images/win.PNG');
   loseImg =loadImage('assets/images/lose.PNG');
   homescreenImg =loadImage('assets/images/homescreen.PNG');
+
+//spritesheets
+playerSS = loadImage('assets/sprites/mermaidspritesheet.png');
+playerJSON = loadJSON('assets/sprites/mermaidspritesheet.json');
+
 }
 function setup(){
   cnv = createCanvas(w,h);
-
+  frameRate(12);
+  imageMode(CENTER);
+  //rectMode(CENTER);
   textFont('monospace');
 
-  player = new Player(); 
-  
+  player = new Witch();
   //coins [0] = new Coins();
   coins.push(new Coins());
-  enemies.push(new Enemies());  
+
+  enemies.push(new Enemies());
+
+let playerFrames = playerJSON.frames;
+
+for (let i = 0; i< playerFrames.length; i++){
+  //console.log(playerFrames[i]);
+  let pos = playerFrames[i].frame;
+  let img = playerSS.get(pos.x, pos.y, pos.w, pos.h);
+  playerAnimation.push(img);
+  //console.log(playerAnimation);
+  }
+
 }
 
 function draw(){
@@ -63,12 +88,11 @@ function draw(){
     youWin();
     cnv.mouseClicked(youWinMouseClicked)
     break;
+    default:
     case 'YOU LOSE!':
     youLose();
     cnv.mouseClicked(youLoseMouseClicked)
     break;
-    //default:
-    //break;
   }
 
   //if (state === 'title'){
@@ -89,36 +113,56 @@ function keyPressed(){
     player.direction ='up'
   }else if(keyCode == DOWN_ARROW){
     player.direction ='down'
-  //}else if (key == ' '){
-  //  player.direction = 'still'
+  }else if (key == ' '){
+    player.direction = 'still'
   }
 }
 function keyReleased(){
-  if(player == '') {
-        player.direction = 'still'
-    } 
+
+ let numberKeysPressed = 0;
+if (keyIsDown(LEFT_ARROW)){
+  numberKeysPressed++;
+}
+if (keyIsDown(RIGHT_ARROW)){
+  numberKeysPressed++;
+}
+if (keyIsDown(UP_ARROW)){
+  numberKeysPressed++;
+}
+if (keyIsDown(DOWN_ARROW)){
+  numberKeysPressed++;
 }
 
+
+  console.log(numberKeysPressed);
+
+  if(numberKeysPressed == 0){
+  player.direction = 'still'
+    }
+  }
+
+
+
 function title(){
-  background(homescreenImg);
+  background(homescreenImg, 0, 0);
   textSize(70);
   fill(255);
   textAlign(CENTER);
-  text('Collect Pearls',w/2, h/5);
+  text('Scarletts fate',w/2, h/5);
   textSize(40);
-  text('click anywhere to start',w/2, h/2);
-  //image(witchImg, w / 2, h - 100, 100, 100)
+  text('click anywhere to see instructions',w/2, h/2);
+
 }
 
 function titleMouseClicked(){
 
     console.log('canvas is clicked on title page');
     state = 'instructions'
-  
+
 }
 
 function instructions(){
-  background(spaceImg,);
+  background(spaceImg, 0, 0);
   textSize(70);
   fill(255);
   textAlign(CENTER);
@@ -127,8 +171,9 @@ function instructions(){
   text('Light Magic Pearls leads to one fate',w/2, h/2);
   text('Dark Magic Pearls leads to another fate',w/2, h-80);
   text('click anywhere to start',w/2, h-100);
-  image(witchImg, w / 2, h - 100, 100, 100);
-
+  //image(witchImg, w / 2, h - 100, 100, 100);
+witch.display();
+witch.move();
 }
 
 function instructionsMouseClicked(){
@@ -139,8 +184,8 @@ function instructionsMouseClicked(){
 }
 
 function level1(){
-  background(oceanImg);
-  if (random(1) <= 0.01){
+  background(oceanImg, 0, 0);
+  if (random(1) <= 0.08){
     coins.push(new Coins());
   }
   if (random(1) <= 0.1){
@@ -149,7 +194,7 @@ function level1(){
   player.display();
   player.move();
 
- 
+
 //iterating through coins array to display an move them
 
 ///using for loop
@@ -158,11 +203,11 @@ function level1(){
    coins[i].move();
   }
 
-
-    for (let i = 0; i < enemies.length; i++){
+  for (let i = 0; i < enemies.length; i++){
    enemies[i].display();
    enemies[i].move();
   }
+
   //using forEach loop
   //coins.forEach(function(coins){
   //  coins.display();
@@ -175,7 +220,7 @@ function level1(){
   //  coins.move();
   //}
 
-  //check for collision 
+  //check for collision
   for (let i = coins.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r +coins[i].r)/2){
    points++;
@@ -183,10 +228,9 @@ function level1(){
    coins.splice(i, 1);
   }else if (coins[i].y > h){
     coins.splice(i, 1);
-    console.log('pearl is out of here')
+    console.log('Light pearl is out of here')
   }
 }
-
 for (let i = enemies.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, enemies[i].x, enemies[i].y) <= (player.r +enemies[i].r)/2){
    points--;
@@ -197,23 +241,24 @@ for (let i = enemies.length - 1; i >= 0; i--){
     console.log('Dark pearl is out of here')
   }
 }
-
 text(`points: ${points}`, w/4, h - 30);
-}
-function level1MouseClicked(){
-  points++;
-  console.log('points = ' + points);
-
-  text(`points: ${points}`, w/4, h - 30);
  if (points >= 2){
     state = 'you win'
   } else if (points <= -1){
     state ='you lose';
   }
 }
+function level1MouseClicked(){
+  //points++;
+  //console.log('points = ' + points);
+
+  //if (points >= 10){
+  //  state = 'YOU WIN!'
+  //}
+}
 
 function youWin(){
-  background(winnerImg);
+  background(winImg, 0, 0);
   textSize(80);
   stroke(255);
   text('YOU WIN!',w/2, h/2);
@@ -229,7 +274,7 @@ player.move();
 }
 
 function youLose(){
-  background(loseImg);
+  background(loseImg, 0, 0);
   textSize(80);
   stroke(255);
   text('GAME OVER!',w/2, h/2);
