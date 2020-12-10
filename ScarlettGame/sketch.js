@@ -73,8 +73,8 @@ function draw(){
     title();
     cnv.mouseClicked(titleMouseClicked);
     break;
-    level1();
     case 'level 1':
+    level1();
     cnv.mouseClicked(level1MouseClicked);
     break;
     case 'level 2':
@@ -128,9 +128,9 @@ function title(){
   stroke(0);
   strokeWeight(4);
   textAlign(CENTER);
-  text('Scarletts Fate',w/2, h*5);
+  text('Scarletts Fate',w/2, h/6);
   textSize(30);
-  text('click anywhere to see instructions',w/2, h*2);
+  text('click anywhere to see instructions',w/2, h/4);
   //image(witchImg, w / 2, h - 100, 100, 100)
 }
 
