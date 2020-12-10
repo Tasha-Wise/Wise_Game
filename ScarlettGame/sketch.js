@@ -125,9 +125,9 @@ function title(){
   textSize(70);
   fill(255);
   textAlign(CENTER);
-  text('Collect Pearls',w/2, h/5);
+  text('Scarletts Fate',w/2, h/5);
   textSize(40);
-  text('click anywhere to start',w/2, h/2);
+  text('click anywhere to see instructions',w/2, h/2);
   //image(witchImg, w / 2, h - 100, 100, 100)
 }
 
