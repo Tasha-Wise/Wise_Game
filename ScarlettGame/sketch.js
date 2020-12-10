@@ -78,7 +78,7 @@ function draw(){
     cnv.mouseClicked(instructionsMouseClicked);
     break;
     case 'level 1':
-    level1();
+    level 1();
     cnv.mouseClicked(level1MouseClicked);
     break;
     case 'YOU WIN!':
@@ -160,7 +160,7 @@ function instructionsMouseClicked(){
 
 }
 
-function level1(){
+function level 1(){
   background(oceanImg);
   if (random(1) <= 0.01){
     coins.push(new Coins());
