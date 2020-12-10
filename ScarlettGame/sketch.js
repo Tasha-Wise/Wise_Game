@@ -149,10 +149,10 @@ function level1(){
   strokeWeight(4);
   textAlign(CENTER);
   text('Collect Pearls',w/2, h/5);
-  textSize(30);
+  textSize(25);
   text('Light Magic Pearls leads to one fate',w/2, h/2);
-  text('Dark Magic Pearls leads to another fate',w/2, h-80);
-  text('click anywhere to start',w/2, h-100);
+  text('Dark Magic Pearls leads to another fate',w/2, h/3);
+  text('click anywhere to start',w/2, h-200);
   image(witchImg, w / 2, h - 100, 100, 100);
 
 }
