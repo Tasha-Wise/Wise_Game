@@ -162,10 +162,10 @@ function level1MouseClicked(){
 
 function level2(){
   background(oceanImg);
-  if (random(1) <= 0.05){
+  if (random(1) <= 0.04){
     coins.push(new Coins());
   }
-  if (random(1) <= 0.07){
+  if (random(1) <= 0.04){
     enemies.push(new Enemies());
   }
   player.display();
