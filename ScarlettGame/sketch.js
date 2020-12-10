@@ -133,7 +133,7 @@ function title(){
 }
 
 function titleMouseClicked(){
-    state = 'instructions'
+    state = 'level 1'
     console.log('canvas is clicked on title page');
     
   
