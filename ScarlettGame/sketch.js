@@ -125,6 +125,8 @@ function title(){
   background(homescreenImg);
   textSize(70);
   fill(255);
+  stroke(0);
+  strokeWeight(4);
   textAlign(CENTER);
   text('Scarletts Fate',w/2, h*5);
   textSize(30);
@@ -143,6 +145,8 @@ function level1(){
   background(spaceImg,);
   textSize(70);
   fill(255);
+  stroke(0);
+  strokeWeight(4);
   textAlign(CENTER);
   text('Collect Pearls',w/2, h/5);
   textSize(30);
@@ -243,6 +247,7 @@ function youWin(){
   background(winnerImg);
   textSize(80);
   stroke(0);
+  strokeWeight(4);
   text('YOU WIN!',w/2, h/2);
   textSize(40);
   text('click anywhere to restart',w/2, h*3/4);
@@ -256,7 +261,8 @@ points = 0;
 function gameOver(){
   background(loseImg);
   textSize(80);
-  stroke(255);
+  stroke(0);
+  strokeWeight(4);
   text('GAME OVER!',w/2, h/2);
   textSize(40);
   text('click anywhere to restart',w/2, h*3/4);
