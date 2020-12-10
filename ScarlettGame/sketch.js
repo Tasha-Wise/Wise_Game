@@ -64,7 +64,7 @@ for (let i = 0; i< playerFrames.length; i++){
   playerAnimation.push(img);
   //console.log(playerAnimation);
   }
-  
+
 }
 
 function draw(){
@@ -132,9 +132,9 @@ function title(){
 }
 
 function titleMouseClicked(){
-
-    console.log('canvas is clicked on title page');
     state = 'instructions'
+    console.log('canvas is clicked on title page');
+    
   
 }
 
@@ -153,9 +153,9 @@ function instructions(){
 }
 
 function instructionsMouseClicked(){
-
-    console.log('canvas is clicked on instructions page');
     state = 'level1'
+    console.log('canvas is clicked on instructions page');
+    
 
 }
 
