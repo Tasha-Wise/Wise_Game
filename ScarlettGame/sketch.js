@@ -75,11 +75,11 @@ function draw(){
     break;
     level1();
     case 'level 1':
-    cnv.mouseClicked(instructionsMouseClicked);
+    cnv.mouseClicked(level1MouseClicked);
     break;
     case 'level 2':
     level2();
-    cnv.mouseClicked(level1MouseClicked);
+    cnv.mouseClicked(level2MouseClicked);
     break;
     case 'YOU WIN!':
     youWin();
@@ -162,10 +162,10 @@ function level1MouseClicked(){
 
 function level2(){
   background(oceanImg);
-  if (random(1) <= 0.01){
+  if (random(1) <= 0.05){
     coins.push(new Coins());
   }
-  if (random(1) <= 0.1){
+  if (random(1) <= 0.07){
     enemies.push(new Enemies());
   }
   player.display();
@@ -219,7 +219,8 @@ for (let i = enemies.length - 1; i >= 0; i--){
     console.log('Dark pearl is out of here')
   }
 }
-
+ points++;
+  console.log('points = ' + points);
 text(`points: ${points}`, w/4, h - 30);
 if (points >= 1){
     state = 'you win'
@@ -228,8 +229,7 @@ if (points >= 1){
   }
 }
 function level2MouseClicked(){
-  points++;
-  console.log('points = ' + points);
+ 
 
  // text(`points: ${points}`, w/4, h - 30);
  //if (points >= 2){
