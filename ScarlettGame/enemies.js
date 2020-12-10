@@ -4,7 +4,7 @@ class Enemies{
 		this.r = 90;
 		this.x = random(w);
 		this.y = 0 - this.r;
-		this.speed = 7;
+		this.speed = 10;
 	}
 	display(){
 		//ellipse(this.x, this.y, this.r, this.r)

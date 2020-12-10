@@ -221,17 +221,22 @@ for (let i = enemies.length - 1; i >= 0; i--){
 }
 
 text(`points: ${points}`, w/4, h - 30);
+if (points >= 2){
+    state = 'you win'
+  } else if (points <= -1){
+    state ='you lose';
+  }
 }
 function level1MouseClicked(){
   points++;
   console.log('points = ' + points);
 
-  text(`points: ${points}`, w/4, h - 30);
- if (points >= 2){
-    state = 'you win'
-  } else if (points <= -1){
-    state ='you lose';
-  }
+ // text(`points: ${points}`, w/4, h - 30);
+ //if (points >= 2){
+ //   state = 'you win'
+  //} else if (points <= -1){
+  //  state ='you lose';
+  //}
 }
 
 function youWin(){
