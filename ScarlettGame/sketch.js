@@ -221,9 +221,9 @@ for (let i = enemies.length - 1; i >= 0; i--){
 }
  
 text(`points: ${points}`, w/4, h - 30);
-if (points >= 1){
+if (points >= 5){
     state = 'you win'
-  } else if (points <= -1){
+  } else if (points <= -5){
     state ='game over';
   }
 }
