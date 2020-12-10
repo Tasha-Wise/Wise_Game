@@ -88,8 +88,8 @@ function draw(){
     youLose();
     cnv.mouseClicked(youLoseMouseClicked)
     break;
-    //default:
-    //break;
+    default:
+    break;
   }
 
   //if (state === 'title'){
