@@ -73,6 +73,7 @@ function draw(){
     title();
     cnv.mouseClicked(titleMouseClicked);
     break;
+    instructions();
     case 'instructions':
     cnv.mouseClicked(instructionsMouseClicked);
     break;
