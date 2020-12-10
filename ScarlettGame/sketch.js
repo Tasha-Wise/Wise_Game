@@ -242,7 +242,7 @@ function level2MouseClicked(){
 function youWin(){
   background(winnerImg);
   textSize(80);
-  stroke(255);
+  stroke(0);
   text('YOU WIN!',w/2, h/2);
   textSize(40);
   text('click anywhere to restart',w/2, h*3/4);
