@@ -81,13 +81,13 @@ function draw(){
     level2();
     cnv.mouseClicked(level2MouseClicked);
     break;
-    case 'YOU WIN!':
+    case 'you win':
     youWin();
     cnv.mouseClicked(youWinMouseClicked)
     break;
-    case 'YOU LOSE!':
-    youLose();
-    cnv.mouseClicked(youLoseMouseClicked)
+    case 'game over':
+    gameOver();
+    cnv.mouseClicked(gameOverMouseClicked)
     break;
     default:
     break;
@@ -219,17 +219,17 @@ for (let i = enemies.length - 1; i >= 0; i--){
     console.log('Dark pearl is out of here')
   }
 }
- points++;
-  console.log('points = ' + points);
+ 
 text(`points: ${points}`, w/4, h - 30);
 if (points >= 1){
     state = 'you win'
   } else if (points <= -1){
-    state ='you lose';
+    state ='game over';
   }
 }
 function level2MouseClicked(){
- 
+ points++;
+  console.log('points = ' + points);
 
  // text(`points: ${points}`, w/4, h - 30);
  //if (points >= 2){
@@ -251,11 +251,9 @@ function youWin(){
 function youWinMouseClicked(){
 state = 'title';
 points = 0;
-player.display();
-player.move();
 }
 
-function youLose(){
+function gameOver(){
   background(loseImg);
   textSize(80);
   stroke(255);
@@ -264,9 +262,7 @@ function youLose(){
   text('click anywhere to restart',w/2, h*3/4);
 }
 
-function youLoseMouseClicked(){
+function gameOverMouseClicked(){
 state = 'title';
 points = 0;
-player.display();
-player.move();
 }
