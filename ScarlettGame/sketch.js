@@ -128,7 +128,7 @@ function title(){
   textAlign(CENTER);
   text('Scarletts Fate',w/2, h/5);
   textSize(30);
-  text('click anywhere to see instructions',w/2, h/2);
+  text('click anywhere to see instructions',w/2, h*2);
   //image(witchImg, w / 2, h - 100, 100, 100)
 }
 
@@ -205,7 +205,7 @@ function level2(){
    coins.splice(i, 1);
   }else if (coins[i].y > h){
     coins.splice(i, 1);
-    console.log('pearl is out of here')
+    console.log('Light pearl is out of here')
   }
 }
 
