@@ -73,12 +73,12 @@ function draw(){
     title();
     cnv.mouseClicked(titleMouseClicked);
     break;
-    instructions();
-    case 'instructions':
+    level1();
+    case 'level 1':
     cnv.mouseClicked(instructionsMouseClicked);
     break;
-    case 'level 1':
-    level1();
+    case 'level 2':
+    level2();
     cnv.mouseClicked(level1MouseClicked);
     break;
     case 'YOU WIN!':
@@ -139,7 +139,7 @@ function titleMouseClicked(){
   
 }
 
-function instructions(){
+function level1(){
   background(spaceImg,);
   textSize(70);
   fill(255);
@@ -153,14 +153,14 @@ function instructions(){
 
 }
 
-function instructionsMouseClicked(){
-    state = 'level 1'
+function level1MouseClicked(){
+    state = 'level 2'
     console.log('canvas is clicked on instructions page');
     
 
 }
 
-function level1(){
+function level2(){
   background(oceanImg);
   if (random(1) <= 0.01){
     coins.push(new Coins());
@@ -227,7 +227,7 @@ if (points >= 1){
     state ='you lose';
   }
 }
-function level1MouseClicked(){
+function level2MouseClicked(){
   points++;
   console.log('points = ' + points);
 
