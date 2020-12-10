@@ -203,7 +203,7 @@ function level2(){
 
   //check for collision 
   for (let i = coins.length - 1; i >= 0; i--){
-  if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r +coins[i].r)/2){
+  if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r +coins[i].r) / 4){
    points++;
    console.log(points);
    coins.splice(i, 1);
@@ -214,8 +214,7 @@ function level2(){
 }
 
 for (let i = enemies.length - 1; i >= 0; i--){
-  if (dist(player.x, player.y, enemies[i].x, enemies[i].y) <= (player.r +enemies[i].r)/2){
-   points--;
+  if (dist(player.x, player.y, enemies[i].x, enemies[i].y) <= (player.r + enemies[i].r) / 4) {
    console.log(points);
    enemies.splice(i, 1);
   }else if (enemies[i].y > h){
@@ -250,7 +249,7 @@ function youWin(){
   strokeWeight(4);
   text('YOU WIN!',w/2, h/2);
   textSize(40);
-  text('click anywhere to restart',w/2, h*3/4);
+  text('click anywhere to restart',w/2, h-20);
 }
 
 function youWinMouseClicked(){
