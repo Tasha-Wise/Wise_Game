@@ -25,7 +25,7 @@ let enemyImg;
 //spritesheets and animation
 let playerSS;
 let playerJSON;
-let playerAnimation =[];
+let playerAnimation = [];
 
 function preload(){
    //stillimages
@@ -39,9 +39,9 @@ function preload(){
   loseImg =loadImage('assets/images/lose.PNG');
   homescreenImg =loadImage('assets/images/homescreen.PNG');
 
-//spritesheets
-playerSS = loadImage('assets/sprites/mermaidspritesheet.png');
-playerJSON = loadJSON('assets/sprites/mermaidspritesheet.json');
+  //spritesheets
+  playerSS = loadImage('assets/sprites/spritesheet.png');
+  playerJSON = loadJSON('assets/sprites/spritesheet.json');
 
 }
 function setup(){
@@ -54,6 +54,9 @@ function setup(){
   //coins [0] = new Coins();
   coins.push(new Coins());
   enemies.push(new Enemies());  
+
+
+console.log(playerJSON.frames[0].frame);
 
 let playerFrames = playerJSON.frames;
 

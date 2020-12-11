@@ -9,9 +9,9 @@ class Player{
 	}
 
 	display(){
-		//rec(this.x, this.y, this.r, this.r)
-		//image(playerImg, this.x, this.y, this.r, this.r)
-		image(playerAnimation[frameCount % playerAnimation.length], this.x, this.y, this.r, this.r)
+		//rec(this.x, this.y, this.r, this.r);
+		//image(playerImg, this.x, this.y, this.r, this.r);
+		image(playerAnimation[frameCount % playerAnimation.length], this.x, this.y, this.r, this.r);
 
 	}
 
