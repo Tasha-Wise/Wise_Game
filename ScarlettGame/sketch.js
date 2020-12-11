@@ -219,6 +219,7 @@ function level2(){
 
 for (let i = enemies.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, enemies[i].x, enemies[i].y) <= (player.r +enemies[i].r)/4) {
+  points--;
    console.log(points);
    enemies.splice(i, 1);
   }else if (enemies[i].y > h){
