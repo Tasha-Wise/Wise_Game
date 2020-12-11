@@ -219,7 +219,7 @@ function level2(){
 
 for (let i = enemies.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, enemies[i].x, enemies[i].y) <= (player.r +enemies[i].r)/4) {
-  points--;
+    points--;
    console.log(points);
    enemies.splice(i, 1);
   }else if (enemies[i].y > h){
@@ -269,7 +269,7 @@ function gameOver(){
   strokeWeight(4);
   text('GAME OVER!',w/2, h/2);
   textSize(40);
-  text('click anywhere to restart',w/2, h*3/4);
+  text('click anywhere to restart',w/2, h-20);
 }
 
 function gameOverMouseClicked(){
