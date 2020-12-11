@@ -56,7 +56,7 @@ function setup(){
   enemies.push(new Enemies());  
 
 
-console.log(playerJSON.frames[0].frame);
+//console.log(playerJSON.frames[0].frame);
 
 let playerFrames = playerJSON.frames;
 
