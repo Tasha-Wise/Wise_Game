@@ -156,7 +156,7 @@ function level1(){
   text('Light Magic Pearls leads to one fate',w/2, h/3);
   text('Dark Magic Pearls leads to another fate',w/2, h/2);
   text('click anywhere to start',w/2, h-200);
-  text('use arrow keys to move',w/2, h-220);
+  text('use arrow keys to move',w/2, h-100);
   image(witchImg, w / 2, h - 100, 100, 100);
 
 }
