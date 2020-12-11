@@ -24,7 +24,7 @@ let enemyImg;
 
 //spritesheets and animation
 let playerSS;
-let playerJSON
+let playerJSON;
 let playerAnimation =[];
 
 function preload(){
@@ -83,11 +83,11 @@ function draw(){
     break;
     case 'you win':
     youWin();
-    cnv.mouseClicked(youWinMouseClicked)
+    cnv.mouseClicked(youWinMouseClicked);
     break;
     case 'game over':
     gameOver();
-    cnv.mouseClicked(gameOverMouseClicked)
+    cnv.mouseClicked(gameOverMouseClicked);
     break;
     default:
     break;
@@ -104,20 +104,20 @@ function draw(){
 
 function keyPressed(){
   if (keyCode == LEFT_ARROW){
-    player.direction ='left'
+    player.direction ='left';
   } else if(keyCode == RIGHT_ARROW){
-    player.direction ='right'
+    player.direction ='right';
   }else if(keyCode == UP_ARROW){
-    player.direction ='up'
+    player.direction ='up';
   }else if(keyCode == DOWN_ARROW){
-    player.direction ='down'
+    player.direction ='down';
   //}else if (key == ' '){
   //  player.direction = 'still'
   }
 }
 function keyReleased(){
   if(player == '') {
-        player.direction = 'still'
+        player.direction = 'still';
     } 
 }
 
@@ -135,7 +135,7 @@ function title(){
 }
 
 function titleMouseClicked(){
-    state = 'level 1'
+    state = 'level 1';
     console.log('canvas is clicked on title page');
     
   
@@ -158,7 +158,7 @@ function level1(){
 }
 
 function level1MouseClicked(){
-    state = 'level 2'
+    state = 'level 2';
     console.log('canvas is clicked on instructions page');
     
 
@@ -209,7 +209,7 @@ function level2(){
    coins.splice(i, 1);
   }else if (coins[i].y > h){
     coins.splice(i, 1);
-    console.log('Light pearl is out of here')
+    console.log('Light pearl is out of here');
   }
 }
 
@@ -219,13 +219,13 @@ for (let i = enemies.length - 1; i >= 0; i--){
    enemies.splice(i, 1);
   }else if (enemies[i].y > h){
     enemies.splice(i, 1);
-    console.log('Dark pearl is out of here')
+    console.log('Dark pearl is out of here');
   }
 }
  
 text(`points: ${points}`, w/4, h - 30);
 if (points >= 5){
-    state = 'you win'
+    state = 'you win';
   } else if (points <= -5){
     state ='game over';
   }
