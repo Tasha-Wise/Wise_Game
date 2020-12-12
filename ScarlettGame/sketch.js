@@ -43,6 +43,9 @@ function preload(){
   playerSS = loadImage('assets/sprites/spritesheet.png');
   playerJSON = loadJSON('assets/sprites/spritesheet.json');
 
+  //gif iamge
+  mermaidgif =loadImage('assets/sprites/mermaid.gif');
+
 }
 function setup(){
   cnv = createCanvas(w,h);
