@@ -21,6 +21,7 @@ let winnerImg;
 let loseImg;
 let homescreenImg;
 let enemyImg;
+let mermaidgif;
 
 //spritesheets and animation
 let playerSS;
